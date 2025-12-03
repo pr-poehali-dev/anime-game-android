@@ -1,5 +1,4 @@
 import { Card } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
 import Icon from '@/components/ui/icon';
 
 export interface CharacterData {
@@ -65,12 +64,12 @@ export default function Character({ character, isSelected, onSelect, showStats =
                   {character.hp}/{character.maxHp}
                 </span>
               </div>
-              <Progress value={hpPercentage} className="h-2 bg-muted">
+              <div className="h-2 bg-muted rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-anime-red transition-all duration-300 rounded-full"
+                  className="h-full bg-anime-red transition-all duration-300"
                   style={{ width: `${hpPercentage}%` }}
                 />
-              </Progress>
+              </div>
             </div>
 
             <div>
@@ -83,12 +82,12 @@ export default function Character({ character, isSelected, onSelect, showStats =
                   {character.mana}/{character.maxMana}
                 </span>
               </div>
-              <Progress value={manaPercentage} className="h-2 bg-muted">
+              <div className="h-2 bg-muted rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-anime-cyan transition-all duration-300 rounded-full"
+                  className="h-full bg-anime-cyan transition-all duration-300"
                   style={{ width: `${manaPercentage}%` }}
                 />
-              </Progress>
+              </div>
             </div>
 
             <div className="grid grid-cols-3 gap-2 mt-3 pt-3 border-t border-border/50">

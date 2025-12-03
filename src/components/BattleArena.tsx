@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Progress } from '@/components/ui/progress';
 import Icon from '@/components/ui/icon';
 import { CharacterData } from './Character';
 
@@ -142,12 +141,12 @@ export default function BattleArena({ player, onBattleEnd }: BattleArenaProps) {
                     {playerHp}/{player.maxHp}
                   </span>
                 </div>
-                <Progress value={playerHpPercent} className="h-3 bg-muted">
+                <div className="h-3 bg-muted rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-anime-red transition-all duration-300 rounded-full"
+                    className="h-full bg-anime-red transition-all duration-300"
                     style={{ width: `${playerHpPercent}%` }}
                   />
-                </Progress>
+                </div>
               </div>
 
               <div>
@@ -160,12 +159,12 @@ export default function BattleArena({ player, onBattleEnd }: BattleArenaProps) {
                     {playerMana}/{player.maxMana}
                   </span>
                 </div>
-                <Progress value={playerManaPercent} className="h-3 bg-muted">
+                <div className="h-3 bg-muted rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-anime-cyan transition-all duration-300 rounded-full"
+                    className="h-full bg-anime-cyan transition-all duration-300"
                     style={{ width: `${playerManaPercent}%` }}
                   />
-                </Progress>
+                </div>
               </div>
             </div>
 
@@ -202,12 +201,12 @@ export default function BattleArena({ player, onBattleEnd }: BattleArenaProps) {
                   {enemy.hp}/{enemy.maxHp}
                 </span>
               </div>
-              <Progress value={enemyHpPercent} className="h-3 bg-muted">
+              <div className="h-3 bg-muted rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-anime-red transition-all duration-300 rounded-full"
+                  className="h-full bg-anime-red transition-all duration-300"
                   style={{ width: `${enemyHpPercent}%` }}
                 />
-              </Progress>
+              </div>
             </div>
 
             <div className="mt-6 text-center">
